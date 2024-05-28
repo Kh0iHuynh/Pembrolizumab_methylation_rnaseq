@@ -11,6 +11,6 @@ module load  gcc/11.3.0  openblas/0.3.20
 module load r/4.3.2
 
 Rscript deseq.r
-#Rscript analysis.r
-#Rscript lme4.r
-#Rscript methylation_lme4.r
+Rscript anova_deseq.r
+Rscript lme4.r
+Rscript methylation_lme4.r
