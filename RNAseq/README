@@ -1,1 +1,4 @@
-
+RNAseq.sh to run salmon aligment and to generate tpm quant file for deseq2:
+  1. namelist.txt is the SRR list for RNAseq.sh
+Deseq.sh to run deseq2 with deseq2 script being deseq.r
+  1. deseq2 meta data is deseq_metadata.csv
