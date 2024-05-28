@@ -75,12 +75,7 @@ salmon quant -i /project/modrek_1129/KhoiHuynh/reference_genome/genecode_v45_hg3
 # make quant file for deseq
 #####
 echo "Name	Length	EffectiveLength	TPM	NumReads" > $output_dir/${input_namelist}/editted.quant.sf
-awk -v sample=$input_namelist '{print $0,sample}' $output_dir/$input_namelist/quant.sf | sed 's/|/ /g' | tail -n +2 | awk '{print $1,$9,$10,$11,$12}' | sort -k1,1 | sed 's/ /\t/g' > $output_dir/${input_namelist}/editted.quant.sf.1
-
-# compare and output NA to transcript not in quant
-awk 'NR==FNR{a[$1]=$0;next}{if($1 in a){print a[$1]}else{print $1,"NA","NA","NA","NA"}}' $output_dir/${input_namelist}/editted.quant.sf.1 /project/modrek_1129/KhoiHuynh/reference_genome/gencode.v45_transcript.txt | grep -v "Geneid" | sed 's/ /\t/g' > $output_dir/${input_namelist}/editted.quant.sf.2
-
-cat $output_dir/${input_namelist}/editted.quant.sf.1 $output_dir/${input_namelist}/editted.quant.sf.2 >> $output_dir/${input_namelist}/editted.quant.sf
+awk -v sample=$input_namelist '{print $0,sample}' $output_dir/$input_namelist/quant.sf | sed 's/|/ /g' | tail -n +2 | awk '{print $1,$9,$10,$11,$12}' | sort -k1,1 | sed 's/ /\t/g' >> $output_dir/${input_namelist}/editted.quant.sf
 
 #####
 # make tpm quant with ENSG instead
