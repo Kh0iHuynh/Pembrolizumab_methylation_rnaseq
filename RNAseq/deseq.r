@@ -82,7 +82,7 @@ dds <- DESeq(ddsTxi)
 #####
 res <- results( dds, contrast = c("Cohort", "A", "B" ) )
 res <- res[order(res$padj),]
-write.table(res, file = "deseq_result_response.txt", col.names= TRUE, quote = FALSE)
+write.table(res, file = "deseq_result_cohort.txt", col.names= TRUE, quote = FALSE)
 plotMA(res, ylim = c(-5, 5),main= "Cohort")
 
 dds <- estimateSizeFactors(dds)
