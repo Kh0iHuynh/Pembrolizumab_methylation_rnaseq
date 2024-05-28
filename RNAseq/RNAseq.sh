@@ -34,17 +34,17 @@ qc_dir="./qc_dir"
 input_namelist=$(sed -n "${SLURM_ARRAY_TASK_ID}p" < $array_namelist)
 echo "$input_namelist"
 
-#mkdir -p $input_trim
-#mkdir -p $qc_dir/raw
-#mkdir -p $qc_dir/trim
-#mkdir -p $output_dir/$input_namelist
+mkdir -p $input_trim
+mkdir -p $qc_dir/raw
+mkdir -p $qc_dir/trim
+mkdir -p $output_dir/$input_namelist
 
 #####
 # fastqc raw reads
 #####
 
-#mkdir -p $qc_dir/raw/$input_namelist
-#fastqc $input_dir/${input_namelist}.fastq.gz -o $qc_dir/raw/$input_namelist
+mkdir -p $qc_dir/raw/$input_namelist
+fastqc $input_dir/${input_namelist}.fastq.gz -o $qc_dir/raw/$input_namelist
 
 #####
 # trimm read 
@@ -55,20 +55,20 @@ echo "$input_namelist"
 #Drop reads below the 36 bases long (MINLEN:36)
 #####
 
-#trimmomatic SE -threads 8 -phred33 $input_dir/${input_namelist}.fastq.gz $input_trim/${input_namelist}.fastq.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+trimmomatic SE -threads 8 -phred33 $input_dir/${input_namelist}.fastq.gz $input_trim/${input_namelist}.fastq.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 
 #####
 # fastqc trimmed reads
 #####
 
-#mkdir -p $qc_dir/trim/$input_namelist
-#fastqc $input_trim/${input_namelist}.fastq.gz -o $qc_dir/trim/$input_namelist
+mkdir -p $qc_dir/trim/$input_namelist
+fastqc $input_trim/${input_namelist}.fastq.gz -o $qc_dir/trim/$input_namelist
 
 #####
 # alignment using salmon
 #####
 
-#salmon quant -i /project/modrek_1129/KhoiHuynh/reference_genome/genecode_v45_hg38 -l A -r $input_trim/${input_namelist}.fastq.gz -p 8 --validateMappings -o $output_dir/$input_namelist
+salmon quant -i /project/modrek_1129/KhoiHuynh/reference_genome/genecode_v45_hg38 -l A -r $input_trim/${input_namelist}.fastq.gz -p 8 --validateMappings -o $output_dir/$input_namelist
 
 
 #####
