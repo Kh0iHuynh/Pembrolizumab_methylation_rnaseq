@@ -1,0 +1,9 @@
+./ is liftover executable file of liftover.
+hg19ToHg38.over.chain.gz is the chain file for liftover
+delete2.txt is chromosome position file with header "chr start stop cpgname"
+converted.txt is the liftover output file
+
+####
+# liftover command line
+####
+./liftOver ../chow_rna/delete2.txt hg19ToHg38.over.chain.gz converted.txt unmapped
