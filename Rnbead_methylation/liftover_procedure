@@ -23,5 +23,5 @@ awk 'NR==FNR{a[$4]=$0; next} ($4 in a ){print a[$4],$0}' converted.txt delete.tx
 ####
 # transpose beta table
 ####
- sed 's/ /\t/g' lifted_beta.txt > hg38.methylation_beta_value.txt
-
+sed 's/ /\t/g' lifted_beta.txt > hg38.methylation_beta_value.txt
+Rscript transpose_methylation_table.r
