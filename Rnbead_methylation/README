@@ -1,1 +1,8 @@
+rnbeadsrun.sh is a batch file to run RnBeads package
+rnbead.r is the actual Rscript for RnBeads
+sample_annotation_test.csv is the sample metadata file for rnbead.r
 
+After RnBeads run finished, beta_1.csv beta table was extracted, was liftover to hg38 coordinate, 
+and was transposed following liftover_procedure. 
+
+transpose_methylation_table.r is the transpose script using R for liftover_procedure 
