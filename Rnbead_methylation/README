@@ -6,6 +6,7 @@ After RnBeads run finished, beta_1.csv beta table was extracted, was liftover to
 and was transposed following liftover_procedure. 
 
 transpose_methylation_table.r is the transpose script using R for liftover_procedure.Metadata for samples
-is deseq_metadata_withouthyphen.csv. 
+is deseq_metadata_withouthyphen.csv. transposed_methylation.txt is the result
+
 
 NOTE: in deseq_metadata_withouthyphen.csv and liftover beta tables, all sample names should not have "-" 
