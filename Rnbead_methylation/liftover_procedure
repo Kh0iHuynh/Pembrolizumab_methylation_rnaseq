@@ -1,9 +1,27 @@
 ./ is liftover executable file of liftover.
 hg19ToHg38.over.chain.gz is the chain file for liftover
 delete2.txt is chromosome position file with header "chr start stop cpgname"
-converted.txt is the liftover output file
+converted.txt is the liftover output file header "chr start stop cpgname"
+delete.txt is a beta value table with header "chr_hg19 start_hg19 stop_hg19 sample1_beta sample2_beta ....samplen_beta"
+lifted_beta.txt is a new file with header "chr_hg38 start_hg38 stop_hg38 chr_hg19 start_hg19 stop_hg19 sample1_beta sample2_beta ....samplen_beta"
+
+
 
 ####
 # liftover command line
 ####
 ./liftOver ../chow_rna/delete2.txt hg19ToHg38.over.chain.gz converted.txt unmapped
+
+
+####
+# combine delete.txt and converted.txt
+####
+echo "chr_hg38 start_hg38 stop_hg38 chr_hg19 start_hg19 stop_hg19 sample1_beta sample2_beta ....samplen_beta" > lifted_beta.txt
+awk 'NR==FNR{a[$4]=$0; next} ($4 in a ){print a[$4],$0}' converted.txt delete.txt  | cut -d" " -f1,2,3,5- >> lifted_beta.txt
+
+
+####
+# transpose beta table
+####
+ sed 's/ /\t/g' lifted_beta.txt > hg38.methylation_beta_value.txt
+
