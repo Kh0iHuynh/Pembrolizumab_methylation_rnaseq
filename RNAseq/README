@@ -4,5 +4,11 @@ Deseq_analysis.sh to run deseq2 analysis
   1. deseq.r : deseq2 script
   2. deseq2 meta data is deseq_metadata.csv
   3. anova_deseq.r : anova script on deseq2 normalized count to confirm deseq2 result if needed. Also to combine deseq2 normalized data and sample metadata
-  4. deseq.r result file is anova_normalized_count_result.txt. The file has transcript name instead of genename. 
+    1. normalized count table :normalized_counts.txt
+    2. normalized count with metadata: normalized_count_with_metadata.txt
+
+  4. deseq.r result files are 
+    1. deseq_result_cohort.txt
+    2. deseq_result_interaction.txt
+    3. deseq_result_survival.txt
   5. converttranscript.sh convert the transcript name to gene name. Result is deseq_anova_result.txt
