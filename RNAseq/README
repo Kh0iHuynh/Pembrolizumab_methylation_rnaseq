@@ -11,4 +11,7 @@ Deseq_analysis.sh to run deseq2 analysis
     1. deseq_result_cohort.txt
     2. deseq_result_interaction.txt
     3. deseq_result_survival.txt
-  5. converttranscript.sh convert the transcript name to gene name. Result is deseq_anova_result.txt
+  5. converttranscript.sh convert the transcript name to gene name. Result are
+    1. deseq_result_cohort_ensgene.txt
+    2. deseq_result_interaction_ensgene.txt
+    3. deseq_result_survival_ensgene.txt
