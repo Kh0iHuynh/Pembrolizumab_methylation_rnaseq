@@ -15,3 +15,7 @@ Deseq_analysis.sh to run deseq2 analysis
     1. deseq_result_cohort_ensgene.txt
     2. deseq_result_interaction_ensgene.txt
     3. deseq_result_survival_ensgene.txt
+  6. extract_gene_start_stop.sh is a script to extract start stop of DE gene from gencode v45 annotation
+    1. DE_gene.txt is the list of all ENSG gene name found to be DE
+    2. gencode.v45_gene_annotation_table.txt is the annotation of gene v45 from gencode.
+    3. result file is DE_gene_withstartstop.txt
