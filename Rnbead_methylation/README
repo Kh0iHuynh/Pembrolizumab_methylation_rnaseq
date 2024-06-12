@@ -23,3 +23,4 @@ beta value is transformed using ln(beta +5).
 methylation_anova.r is the ANOVA script
 methylation_lme4.r is the script for random mixed model effect
 anova_methylation_result.txt is the example result of methylation_anova.r
+cell_type_analysis.r is the Rscript to run ANOVA on immune cell contents from MethylResolver
