@@ -16,3 +16,9 @@ NOTE: in deseq_metadata_withouthyphen.csv and liftover beta tables, all sample n
 methylresolver.sh is the bash script to run methyresolver.r using methyresolver_data.txt
 methylresolver_data.txt is the data file contain beta value of each samples as columns and row name is the name of cpg.
 methylresolver_data.txt in this github is an example
+
+
+## ANOVA and random mixed model effect
+beta value is transformed using ln(beta +5).
+methylation_anova.r is the ANOVA script
+methylation_lme4.r is the script for random mixed model effect
