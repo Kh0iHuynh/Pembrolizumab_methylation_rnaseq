@@ -10,3 +10,8 @@ is deseq_metadata_withouthyphen.csv. transposed_methylation.txt is the result
 
 
 NOTE: in deseq_metadata_withouthyphen.csv and liftover beta tables, all sample names should not have "-" 
+
+
+## Methyl resolver step
+methylresolver.sh is the bash script to run methyresolver.r using methyresolver_data.txt
+methylresolver_data.txt is the data file contain beta value of each samples as columns and row name is the name of cpg.
