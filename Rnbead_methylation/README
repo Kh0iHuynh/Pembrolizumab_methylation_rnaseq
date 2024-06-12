@@ -22,3 +22,4 @@ methylresolver_data.txt in this github is an example
 beta value is transformed using ln(beta +5).
 methylation_anova.r is the ANOVA script
 methylation_lme4.r is the script for random mixed model effect
+anova_methylation_result.txt is the example result of methylation_anova.r
