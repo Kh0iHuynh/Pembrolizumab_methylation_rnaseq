@@ -21,4 +21,6 @@ Deseq_analysis.sh to run deseq2 analysis
     3. result file is DE_gene_withstartstop.txt
   7. convert ensemble gene id to entrez gene id:
     1. DE_gene.txt list is copie to g:Profiler covnert function. Organism is Homo sapien and Targetnamespace is ENTREZGENE_ACC
-    2. ensembletoentrez.csv is result
+    2. ensembletoentrez.csv is result. It is further editted to new format as follows:
+      a. sed 's/ /_/g' ensembletoentrez.csv | sed 's/,/ /g' | awk '{print $1,$2,$3,$4}' > ensembletoentrez.txt
+      b. header of ensembletoentrez.txt is  "ensgene entrez_id name description" 
