@@ -11,16 +11,19 @@ Deseq_analysis.sh to run deseq2 analysis
     1. deseq_result_cohort.txt
     2. deseq_result_interaction.txt
     3. deseq_result_survival.txt
-  5. converttranscript.sh convert the transcript name to gene name. Result are
-    1. deseq_result_cohort_ensgene.txt
-    2. deseq_result_interaction_ensgene.txt
-    3. deseq_result_survival_ensgene.txt
-  6. extract_gene_start_stop.sh is a script to extract start stop of DE gene from gencode v45 annotation
-    1. DE_gene.txt is the list of all ENSG gene name found to be DE
-    2. gencode.v45_gene_annotation_table.txt is the annotation of gene v45 from gencode.
-    3. result file is DE_gene_withstartstop.txt
-  7. convert ensemble gene id to entrez gene id:
-    1. DE_gene.txt list is copie to g:Profiler covnert function. Organism is Homo sapien and Targetnamespace is ENTREZGENE_ACC
-    2. ensembletoentrez.csv is result. It is further editted to new format as follows:
-      a. sed 's/ /_/g' ensembletoentrez.csv | sed 's/,/ /g' | awk '{print $1,$2,$3,$4}' > ensembletoentrez.txt
-      b. header of ensembletoentrez.txt is  "ensgene entrez_id name description" 
+Converttranscript.sh convert the transcript name to gene name. Result are
+  1. deseq_result_cohort_ensgene.txt
+  2. deseq_result_interaction_ensgene.txt
+  3. deseq_result_survival_ensgene.txt
+Extract_gene_start_stop.sh is a script to extract start stop of DE gene from gencode v45 annotation
+  1. DE_gene.txt is the list of all ENSG gene name found to be DE
+  2. gencode.v45_gene_annotation_table.txt is the annotation of gene v45 from gencode.
+  3. result file is DE_gene_withstartstop.txt
+Convert ensemble gene id to entrez gene id:
+  1. DE_gene.txt list is copie to g:Profiler covnert function. Organism is Homo sapien and Targetnamespace is ENTREZGENE_ACC
+  2. ensembletoentrez.csv is result. It is further editted to new format as follows:
+    a. sed 's/ /_/g' ensembletoentrez.csv | sed 's/,/ /g' | awk '{print $1,$2,$3,$4}' > ensembletoentrez.txt
+    b. header of ensembletoentrez.txt is  "ensgene entrez_id name description" 
+GO analysis:
+  1.go_enrichment_XX.r is the script to perform GO analysis using ensembletoentrez.txt and DE results:
+    a. XX is bp , cc, or mf 
