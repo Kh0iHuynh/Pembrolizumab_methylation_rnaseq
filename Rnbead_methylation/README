@@ -24,3 +24,9 @@ methylation_anova.r is the ANOVA script
 methylation_lme4.r is the script for random mixed model effect
 anova_methylation_result.txt is the example result of methylation_anova.r
 cell_type_analysis.r is the Rscript to run ANOVA on immune cell contents from MethylResolver
+
+## Combine methylation anova and DE gene location 
+merge_methylation_deseq_bycoord.sh is the script to process and combine methylation anova results and DE gene results
+de_and_methylation_anova_result.txt is the result (-log(0.05) = 1.301)
+
+
