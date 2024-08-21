@@ -25,5 +25,8 @@ Convert ensemble gene id to entrez gene id:
     a. sed 's/ /_/g' ensembletoentrez.csv | sed 's/,/ /g' | awk '{print $1,$2,$3,$4}' > ensembletoentrez.txt
     b. header of ensembletoentrez.txt is  "ensgene entrez_id name description" 
 GO analysis:
-  1.go_enrichment_XX.r is the script to perform GO analysis using ensembletoentrez.txt and DE results:
-    a. XX is bp , cc, or mf 
+  1. goanalysis.sh is script used to prepare deseq significant genes for PANTHER go analysis:
+    a. genes are filter by their change in regulation according to their fold change: > 1 (up), <-1 (down), and -1 < + < 1 (neutral)
+    b. genes are then pasted onto PANTHER for go analysis:
+      + survival_up, survival_down, survival_neutral, interaction_up, interaction_down
+    c. results are combined into one final PANTHER result file: panther_go_analysis.txt.
