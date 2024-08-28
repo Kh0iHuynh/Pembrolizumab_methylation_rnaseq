@@ -17,7 +17,7 @@ samplecount <- as.data.frame(read.csv('methylresolver_data.txt', header = TRUE, 
 
 # Deconvolution with default signature and calculating absolute fractions with default RF model while 
 # specifying a particular alpha value:
-MethylResolver(methylMix = samplecount, alpha = 0.5)
+MethylResolver(methylMix = samplecount, alpha = 0.5, absolute = FALSE)
 
 # Deconvolution with default signature and only calculating relative fractions:
 #MethylResolver(methylMix = samplecount, absolute = FALSE)
