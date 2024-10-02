@@ -30,3 +30,9 @@ GO analysis:
     b. genes are then pasted onto PANTHER for GO analysis: https://geneontology.org/
       + survival_up, survival_down, survival_neutral, interaction_up, interaction_down
     c. results are combined into one final PANTHER result file: panther_go_analysis.txt.
+
+DE significant genes for all categories (1 to 3 use adj-pvalue, 4 use normal pvalue):
+  1. by survival :deseq_significant_survival.txt
+  2. by cohort :deseq_significant_cohort.txt
+  3. by interaction :deseq_significant_interaction.txt
+  4. by cohort using only patients who survive more than 8 months : deseq_significant_onlyoverpatient_cohort.txt
