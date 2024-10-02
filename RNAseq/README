@@ -33,6 +33,10 @@ GO analysis:
 
 DE significant genes for all categories (1 to 3 use adj-pvalue, 4 use normal pvalue):
   1. by survival :deseq_significant_survival.txt
+    a. expression for each samples for each genes are: gene_survival_expression.txt
   2. by cohort :deseq_significant_cohort.txt
+    a. expression for each samples for each genes are: gene_cohort_expression.txt
   3. by interaction :deseq_significant_interaction.txt
+    a. expression for each samples for each genes are: gene_interaction_expression.txt
   4. by cohort using only patients who survive more than 8 months : deseq_significant_onlyoverpatient_cohort.txt
+    a. expression for each samples for each genes are: onlyovergene_cohort_expression.txt
