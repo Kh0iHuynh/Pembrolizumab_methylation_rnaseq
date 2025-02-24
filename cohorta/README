@@ -27,6 +27,13 @@ Main input: transposed_methylation.txt produced as described in Rnbead_methylati
 Main output: mann_whitney_methylation_cohorta_result.txt
 
 #####
+# Extract significant CpG within +-5kb of DE gene
+#####
+Main script: cpggeneintegration.r
+Main input: deseq_result_cohorta_survival.txt,mann_whitney_methylation_cohorta_result.txt
+Main output: matched_file.txt
+
+#####
 # Immune cell type annotation and testing
 #####
 Main script: methylresolver.r (for cell type annotation) and cell_type_analysis.r  (for cell type testing)
