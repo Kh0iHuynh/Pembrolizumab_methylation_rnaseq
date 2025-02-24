@@ -23,7 +23,7 @@ Temporary output: percent_variance_explained_cohorta.txt
 # CpG methylation analysis
 #####
 Main script: mannwhitneyutest_methylation.r
-Main input: transposed_methylation.txt filtered to get only cohort A samples
+Main input: transposed_methylation.txt produced as described in Rnbead_methylation and filtered to get only cohort A samples
 Main output: mann_whitney_methylation_cohorta_result.txt
 
 
