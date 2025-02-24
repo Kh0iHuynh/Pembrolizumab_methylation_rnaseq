@@ -26,5 +26,10 @@ Main script: mannwhitneyutest_methylation.r
 Main input: transposed_methylation.txt produced as described in Rnbead_methylation and filtered to get only cohort A samples
 Main output: mann_whitney_methylation_cohorta_result.txt
 
-
+#####
+# Immune cell type annotation and testing
+#####
+Main script: methylresolver.r (for cell type annotation) and cell_type_analysis.r  (for cell type testing)
+Main input: methylresolver_data.txt (produced as described in Rnbead_methylation directory
+Main output: MethylResolver.txt, anova_by_cell_type_result.txt
 
