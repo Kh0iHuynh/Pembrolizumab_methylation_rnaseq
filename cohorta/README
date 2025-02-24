@@ -1,1 +1,22 @@
 REAdme for cohort A
+######
+# Differential expression analysis
+#####
+Main scirpt: deseq.r
+Main input : Salmon editted.quant.sf for cohort A samples only
+Main metadata: deseq_metadata.csv
+Main output: deseq_result_cohorta_survival.txt
+
+
+#####
+# Variance Explained by Sex, and Age
+# ( run together with DE step) 
+#####
+Main script: deseq.r
+Main input : Salmon editted.quant.sf for cohort A samples only
+Main metadata: deseq_metadata.csv
+Main output: joint_deseq_result_percent_variance_explained_cohorta.txt
+Temporary output: percent_variance_explained_cohorta.txt
+
+
+
