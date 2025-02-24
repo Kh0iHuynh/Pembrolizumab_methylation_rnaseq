@@ -1,1 +1,49 @@
-README
+README for cohort B
+######
+# Differential expression analysis
+#####
+Main scirpt: deseq.r
+Main input : Salmon editted.quant.sf for cohort B samples only
+Main metadata: deseq_metadata.csv
+Main output: deseq_result_cohortb_survival.txt
+
+#####
+# DE gene GO analysis:
+#####
+Main script :GSEAdegene.r
+Main input: deseq_result_cohortb_survival.txt
+Main database: all the main categories and sub-categories found on https://www.gsea-msigdb.org/gsea/msigdb
+Main output: text file and plot results can be found in goanalysis folder (uploaded here as a RAR compressed file)
+
+#####
+# Variance Explained by Sex, and Age
+# ( run together with DE step) 
+#####
+Main script: deseq.r
+Main input : Salmon editted.quant.sf for cohort B samples only
+Main metadata: deseq_metadata.csv
+Main output: joint_deseq_result_percent_variance_explained_cohortb.txt
+Temporary output: percent_variance_explained_cohortb.txt
+
+
+#####
+# CpG methylation analysis
+#####
+Main script: mannwhitneyutest_methylation.r
+Main input: transposed_methylation.txt produced as described in Rnbead_methylation and filtered to get only cohort B samples
+Main output: mann_whitney_methylation_cohortb_result.txt
+
+#####
+# Extract significant CpG within +-5kb of DE gene
+#####
+Main script: cpggeneintegration.r
+Main input: deseq_result_cohortb_survival.txt,mann_whitney_methylation_cohortb_result.txt
+Main output: matched_file.txt
+
+#####
+# Immune cell type annotation and testing
+#####
+Main script: methylresolver.r (for cell type annotation) and cell_type_analysis.r  (for cell type testing)
+Main input: methylresolver_data.txt (produced as described in Rnbead_methylation directory
+Main output: MethylResolver.txt, anova_by_cell_type_result.txt
+
