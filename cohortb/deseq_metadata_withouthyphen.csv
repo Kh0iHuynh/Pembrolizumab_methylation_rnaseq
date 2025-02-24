@@ -1,0 +1,13 @@
+SRR_ID Sample_ID Sentrix_ID Sentrix_Position Sex Age Overall_Survival RANO Relapses_Count OS_Status IFNG_response KPS Group Cohort
+SRR8112660 DF2CAB_tumor_gDNA_2 203441400074 R01C01 female 60-69 Over PD 1 0 Decreased 90 Over_Decreased B
+SRR8112661 DF10DL_tumor_gDNA_ 203441400074 R07C01 female 60-69 Under PD 1 0 Decreased 90 Under_Decreased B
+SRR8112662 DF11RCC_tumor_gDNA_ 203441400074 R08C01 female 60-69 Under PD 1 0 Increased 80 Under_Increased B
+SRR8112663 SK14JR_tumor_gDNA_ 203441400073 R02C01 female 70+ Over SD 2 1 Decreased 70 Over_Decreased B
+SRR8112665 SF17LSM_tumor_gDNA_2 203441400073 R03C01 female 60-69 Under PD 1 0 Decreased 90 Under_Decreased B
+SRR8112666 SF20LCK_tumor_gDNA_ 203441400073 R05C01 female 70+ Over PD 1 0 Decreased 80 Over_Decreased B
+SRR8112667 SK21LS_tumor_gDNA_ 203441400073 R06C01 male 70+ Under PD 1 0 Increased 90 Under_Increased B
+SRR8112668 DF22LM_tumor_gDNA_2 203441400073 R07C01 female 70+ Under PD 1 0 Decreased 90 Under_Decreased B
+SRR8112669 SF24RG_tumor_gDNA_ 203450830019 R01C01 female 50-59 Under PD 1 0 Decreased 80 Under_Decreased B
+SRR8112671 MA31PPD_tumor_gDNA_ 203450830019 R07C01 male 70+ Under PD 1 0 Increased 80 Under_Increased B
+SRR8112673 SK30DC_tumor_gDNA_ 203450830019 R06C01 female 50-59 Over PD 1 0 Increased 90 Over_Increased B
+SRR8112674 UT34SJ_tumor_gDNA_ 203450830052 R01C01 female 50- Under PD 1 0 Decreased 90 Under_Decreased B
