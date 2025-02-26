@@ -14,14 +14,14 @@ print("done load files")
 library(biomaRt)
 
 
-# Step 3: Convert rownames (Ensemble gene names) into a column 'gene'
+# Convert rownames (Ensemble gene names) into a column 'gene'
 file1$gene <- rownames(file1)
 
-# Step 4: Set up connection to Ensembl via biomaRt
+# Set up connection to Ensembl via biomaRt
 # Query Ensembl's gene annotation data for chromosome, start, and end positions
 ensembl <- useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl")
 
-# Step 5: Extract chromosome, start, and end positions for each gene
+# Extract chromosome, start, and end positions for each gene
 gene_info <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position'),
                    filters = 'ensembl_gene_id',
                    values = file1$gene, # Use Ensembl gene IDs from file1
@@ -29,10 +29,10 @@ gene_info <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_p
 
 
 print("done extract info")
-# Step 6: Merge the extracted data (gene_info) with file1 based on gene IDs
+# Merge the extracted data (gene_info) with file1 based on gene IDs
 file1 <- merge(file1, gene_info, by.x = "gene", by.y = "ensembl_gene_id", all.x = TRUE)
 
-# Step 7: Add 5000 base pairs to the start and end positions
+# Add 5000 base pairs to the start and end positions
 file1 <- file1 %>%
   mutate(
     start_hg38 = start_position - 5000,   # Subtract 5000 from start
@@ -41,14 +41,14 @@ file1 <- file1 %>%
   )
 
 
-# Step 9: Filter rows from file2 based on overlap with regions from file1
+# Filter rows from file2 based on overlap with regions from file1
 # Create an empty data frame to store matched rows from file2
 matched_rows <- data.frame()
 
 
 print("start matching file")
 
-# Step 10: Loop through each row of file2 and compare with file1 regions
+# Loop through each row of file2 and compare with file1 regions
 for (i in 1:nrow(file2)) {
   # Extract chr, start, and end for the current row of file2
   chr2 <- file2$chr_hg38[i]
@@ -67,8 +67,8 @@ for (i in 1:nrow(file2)) {
   }
 }
 
-# Step 11: Write the matched rows to a new file (matched_file.csv)
+# Write the matched rows to a new file (matched_file.csv)
 write.table(matched_rows, file = "matched_file.txt", row.names = FALSE, sep = "\t", quote = FALSE)
-# Step 12: Print a message confirming the result
+# Print a message confirming the result
 cat("Matched rows have been written to 'matched_file.csv'.\n")
 
